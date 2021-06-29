@@ -1,0 +1,43 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather Forecast</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="style.css" />
+        <link
+            rel="stylesheet"
+            href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+            integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="card">
+            <dic class="search">
+                <input class="search-field" type="text" placeholder="Search" />
+                <button><i class="fas fa-search fa-2x"></i></button>
+            </dic>
+            <div class="error-field"></div>
+            <div class="weather loading">
+                <h2 class="city"></h2>
+                <div class="temp"></div>
+                <div class="description-containter">
+                    <img class="icon" src="" alt="weather-icon" />
+                    <div class="description"></div>
+                </div>
+                <div class="humidity"></div>
+                <div class="wind"></div>
+            </div>
+        </div>
+
+        <script src="index.js" charset="utf-8"></script>
+    </body>
+</html>
