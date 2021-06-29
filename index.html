@@ -10,23 +10,26 @@
             href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
             rel="stylesheet"
         />
-
-        <link rel="stylesheet" href="style.css" />
         <link
             rel="stylesheet"
             href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
             integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <div class="card">
             <dic class="search">
-                <input class="search-field" type="text" placeholder="Search" />
+                <input
+                    class="search-field"
+                    type="text"
+                    placeholder="Enter city name"
+                />
                 <button><i class="fas fa-search fa-2x"></i></button>
             </dic>
-            <div class="error-field loading"></div>
-            <div class="weather loading">
+            <div class="error-field do-not-show"></div>
+            <div class="weather do-not-show">
                 <h2 class="city"></h2>
                 <div class="temp"></div>
                 <div class="description-containter">
@@ -37,7 +40,6 @@
                 <div class="wind"></div>
             </div>
         </div>
-
         <script src="index.js" charset="utf-8"></script>
     </body>
 </html>
