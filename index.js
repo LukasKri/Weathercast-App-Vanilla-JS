@@ -7,8 +7,11 @@ const handleErrors = (response) => {
     return response;
 };
 
-const showErrorMessage = (cityName, errorMessage) => {
-    const html = `<h2 class="error-field">City "${cityName}" ${errorMessage}</h2>`;
+const showErrorMessage = (cityName) => {
+    const html = `<h2 class="error-field">Sorry, city "${cityName}" was not found</h2>`;
+
+    document.querySelector(".error-field").classList.remove("loading");
+    document.querySelector(".weather").classList.add("loading");
     document.querySelector(".error-field").innerHTML = html;
 };
 
@@ -22,17 +25,16 @@ const fetchWeather = (cityName) => {
         .then(handleErrors)
         .then((response) => response.json())
         .then((data) => displayWeather(data))
-        .catch((error) => showErrorMessage(cityName, error.message));
+        .catch(() => showErrorMessage(cityName));
 };
 
 const displayWeather = (data) => {
-    // if (data && data.weather) {
     const { name } = data;
     const { icon, description } = data.weather[0];
     const { temp, humidity } = data.main;
     const { speed } = data.wind;
 
-    console.log(name, icon, description, temp, humidity, speed);
+    // console.log(name, icon, description, temp, humidity, speed);
 
     document.querySelector(".city").innerText = "Weather in " + name;
 
@@ -41,15 +43,17 @@ const displayWeather = (data) => {
 
     document.querySelector(".description").innerText = description;
 
-    document.querySelector(".temp").innerText = temp + " °C";
+    document.querySelector(".temp").innerText = Math.round(temp) + " °C";
 
     document.querySelector(".humidity").innerText =
         "Humidity: " + humidity + "%";
 
-    document.querySelector(".wind").innerText = "Wind speed: " + speed + " m/s";
+    document.querySelector(".wind").innerText =
+        "Wind speed: " + speed.toFixed(1) + " m/s";
 
     document.querySelector(".weather").classList.remove("loading");
-    // }
+
+    document.querySelector(".error-field").classList.add("loading");
 };
 
 const search = () => {

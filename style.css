@@ -76,6 +76,7 @@ button:hover {
 .description-containter {
     display: flex;
     align-items: center;
+    margin-bottom: 0.4em;
 }
 
 .description {
@@ -83,8 +84,9 @@ button:hover {
     margin-left: 0.5em;
 }
 
-.weather.loading {
-    visibility: hidden;
+.weather.loading,
+.error-field.loading {
+    display: none;
     max-height: 20px;
     position: relative;
 }
