@@ -5,7 +5,7 @@ and data fetching was made via vanilla JavaScript.
 
 ## Live demo
 
-https://lukaskri.github.io/Weathercast-App-Canilla-JS/
+https://lukaskri.github.io/Weathercast-App-Vanilla-JS/
 
 ## GIF 
 
